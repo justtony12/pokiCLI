@@ -17,8 +17,9 @@ class Pokedex::API
         uri = URI.parse(url)
         response = Net::HTTP.get(uri)
         data = JSON.parse(response)
-        Pokemon.new(data)
+        Pokedex::Pokemon.new(data)
     end
 end
 
 Pokedex::API.new.get_pokemon_urls
+binding.pry
