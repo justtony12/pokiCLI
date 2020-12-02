@@ -1,3 +1,2 @@
 module Pokedex
-    
 end

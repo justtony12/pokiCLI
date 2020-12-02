@@ -21,5 +21,3 @@ class Pokedex::API
     end
 end
 
-Pokedex::API.new.get_pokemon_urls
-binding.pry
