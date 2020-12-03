@@ -1,11 +1,24 @@
 #taking care of displaying info - all of puts/print statements
 #taking care of user input - gets
+
 class Pokedex::CLI
     def run
        greeting
-       list_pokemon
        menu
-       goodbye
+
+       input = ""
+
+        while input != "exit"
+            puts "Which Pokemon would you like to learn more about?"
+            puts "Choose a number from 1-20!"
+            puts "To close your Pokedex type 'exit'."
+
+            input = gets.strip
+            case input
+            when "exit"
+            goodbye
+            end
+        end
     end
 
     def greeting
