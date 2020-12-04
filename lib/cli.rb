@@ -1,24 +1,14 @@
+  
 class CLI
     def run
-       greeting
-       list_pokemon
-
-       input = ""
-
-        while input != "exit"
-            puts "To choose a Pokemon to learn more about type 'learn'."
-            sleep(1)
-            puts "To close your Pokedex type 'exit'."
-
-            input = gets.strip
-
-            case input
-            when "exit"
-            goodbye
-            when "learn"
-                choose_a_pokemon
-            end
+        while @input != "exit"
+            greeting
+            list_pokemon
+            get_input
+            validate(@input)
+            options
         end
+        goodbye
     end
 
     def greeting
@@ -30,34 +20,38 @@ class CLI
     end
 
     def list_pokemon
-        Pokemon.all.each.with_index(1) do |pokemon, i|
-            puts "#{i}. #{pokemon.name}"
-        end
+        Pokemon.all.each{|p| puts "#{p.int_id}. #{p.name}"}
+        sleep(1)
+        puts "Choose a number from 1-10."
+    end
+
+    def get_input
+        @input = gets.strip
+    end
+
+    def validate(input)
+        pokemon = Pokemon.find_by_id(input)
+        pokemon ? show_pokemon_info(pokemon) : invalid_input
+    end
+
+    def show_pokemon_info(pokemon)
+        puts "Name: #{pokemon.name.capitalize}"
+        puts "Height: #{pokemon.height}"
+        puts "Weight: #{pokemon.weight}"
+    end
+
+    def invalid_input
+        puts "That is not a valid number, please choose a number form 1-10."
+        sleep(1)
+    end
+
+    def options
+        puts "Would you like to see your list of pokemon again?"
+        get_input
     end
 
     def goodbye
         puts "See you soon!"
         exit
-    end
-
-    def choose_a_pokemon
-        puts "Which Pokemon would you like to learn about?"
-
-        input = gets.strip.to_i
-        if (1..Pokemon.all.length).include?(input)
-
-        else
-            puts "That is not a valid number, please choose a number from 1-10."
-            sleep(1)
-        end
-        
-        puts "Type 'menu' to return to your list of Pokemon!"
-        input = gets.strip
-
-        case input
-        when "menu"
-        list_pokemon
-        end
-
     end
 end
