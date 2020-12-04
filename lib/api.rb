@@ -1,7 +1,7 @@
 require_relative "../config/environment"
-class Pokedex::API
+class API
     def initialize
-        @url = "https://pokeapi.co/api/v2/pokemon"
+        @url = "https://pokeapi.co/api/v2/pokemon?limit=10/"
     end
 
     def get_pokemon_urls
@@ -17,7 +17,7 @@ class Pokedex::API
         uri = URI.parse(url)
         response = Net::HTTP.get(uri)
         data = JSON.parse(response)
-        Pokedex::Pokemon.new(data)
+        Pokemon.new(data)
     end
 end
 

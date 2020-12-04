@@ -1,16 +1,13 @@
-#taking care of displaying info - all of puts/print statements
-#taking care of user input - gets
-
-class Pokedex::CLI
+class CLI
     def run
        greeting
-       menu
+       list_pokemon
 
        input = ""
 
         while input != "exit"
             puts "To choose a Pokemon to learn more about type 'learn'."
-            sleep(2)
+            sleep(1)
             puts "To close your Pokedex type 'exit'."
 
             input = gets.strip
@@ -29,23 +26,13 @@ class Pokedex::CLI
         name = gets.strip
         puts "Hi ya, #{name}!"
         puts "Fetching your Pokemon now..."
-        Pokedex::API.new.get_pokemon_urls
-    end
-
-    def menu
-        list_pokemon
+        API.new.get_pokemon_urls
     end
 
     def list_pokemon
-        Pokedex::Pokemon.all.each.with_index(1) do |pokemon, i|
+        Pokemon.all.each.with_index(1) do |pokemon, i|
             puts "#{i}. #{pokemon.name}"
         end
-    end
-
-    def choose_a_pokemon
-        puts "Which Pokemon would you like to learn about?"
-
-        input = gets.strip.to_i
     end
 
     def goodbye
@@ -57,8 +44,20 @@ class Pokedex::CLI
         puts "Which Pokemon would you like to learn about?"
 
         input = gets.strip.to_i
-        if (1..Pokedex::Pokemon.all.length).include?(input)
-            puts "add something here..."
+        if (1..Pokemon.all.length).include?(input)
+
+        else
+            puts "That is not a valid number, please choose a number from 1-10."
+            sleep(1)
         end
+        
+        puts "Type 'menu' to return to your list of Pokemon!"
+        input = gets.strip
+
+        case input
+        when "menu"
+        list_pokemon
+        end
+
     end
 end

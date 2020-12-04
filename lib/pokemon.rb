@@ -1,9 +1,9 @@
-class Pokedex::Pokemon
+class Pokemon
     @@all = []
     def initialize(pokemon_hash)
         pokemon_hash.each do |key, value|
             self.class.attr_accessor key
-        self.send("#{key}=", value)
+            self.send("#{key}=", value)
         end
         @@all << self
     end
