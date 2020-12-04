@@ -1,5 +1,12 @@
   
 class CLI
+    # @@muted="\e[1;31m"
+    # @@grn="\e[1;32m"
+    # @@blu="\e[1;34m"
+    # @@mag="\e[1;35m"
+    # @@cyn="\e[1;36m"
+    # @@white="\e[0m"
+
     def run
         while @input != "exit"
             greeting
@@ -12,7 +19,28 @@ class CLI
     end
 
     def greeting
-        puts "Hi! Welcome to your Pokedex: Please enter your name, trainer."
+        puts <<-'EOF'.colorize(:red).on_black
+
+                    _  _  _         _                               _                          
+                    (_)(_)(_)       | |                             | |                        
+                     _  _  _  _____ | |   ____   ___   ____   _____ | |                        
+                    | || || || ___ || |  / ___) / _ \ |    \ | ___ ||_|                        
+                    | || || || ____|| | ( (___ | |_| || | | || ____| _                         
+                     \_____/ |_____) \_) \____) \___/ |_|_|_||_____)|_|                        
+                                                                                               
+                                           _                                                   
+                                         _| |_   ___                                           
+                                        (_   _) / _ \                                          
+                                          | |_ | |_| |                                         
+                                           \__) \___/                                          
+            _     _                         ______          _                 _                
+            | |   | |                       (_____ \        | |               | |              
+            | |___| |  ___   _   _   ____    _____) )  ___  | |  _  _____   __| | _____  _   _ 
+            |_____  | / _ \ | | | | / ___)  |  ____/  / _ \ | |_/ )| ___ | / _  || ___ |( \ / )
+            _____| || |_| || |_| || |      | |      | |_| ||  _ ( | ____|( (_| || ____| ) X (  
+            (_______| \___/ |____/ |_|      |_|       \___/ |_| \_)|_____) \____||_____)(_/ \_)
+        EOF
+
         name = gets.strip
         puts "Hi ya, #{name}!"
         puts "Fetching your Pokemon now..."
@@ -38,6 +66,7 @@ class CLI
         puts "Name: #{pokemon.name.capitalize}"
         puts "Height: #{pokemon.height}"
         puts "Weight: #{pokemon.weight}"
+        puts "Base XP: #{pokemon.base_experience}"
     end
 
     def invalid_input
