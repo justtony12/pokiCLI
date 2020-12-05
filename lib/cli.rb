@@ -90,7 +90,7 @@ class CLI
 
     def show_pokemon_info(pokemon)
 
-        Pokemon.look_at_me(@input)
+        Pokemon.look_at_me(pokemon)
         puts "Name: #{pokemon.name.capitalize}".colorize(:blue).bold
         puts "Height: #{pokemon.height}".colorize(:blue).bold
         puts "Weight: #{pokemon.weight}".colorize(:blue).bold
