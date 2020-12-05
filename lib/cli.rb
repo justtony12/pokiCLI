@@ -96,7 +96,7 @@ class CLI
         puts "Weight: #{pokemon.weight}".colorize(:blue).bold
         puts "Base XP: #{pokemon.base_experience}".colorize(:blue).bold
         sleep(1)
-        puts "To go back to your list of pokemon type 'menu' or to exit type 'exit'."
+        puts "To go back to your list of pokemon type 'menu' or to exit type 'exit'.".colorize(:yellow).bold
         get_input
     end
 
