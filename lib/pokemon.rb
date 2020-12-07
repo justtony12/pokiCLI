@@ -1,8 +1,9 @@
 class Pokemon
-    attr_accessor :int_id, :name, :height, :weight, :types, :abilities
-    attr_accessor :stats, :sprites, :species, :location_area_encounters
-    attr_accessor :is_default, :held_items, :game_indices, :url
-    attr_accessor :id, :order, :base_experience, :forms, :moves
+    #As of right now, only the name, url and int_id are working...
+    #might need to look at the api again and add somthing to line 24.
+    attr_accessor :int_id, :id, :name, :height, :weight, :types
+    attr_accessor :abilities, :url, :moves, :base_experience, :forms
+    
     @@all = []
 
     def initialize(attrs)

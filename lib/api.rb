@@ -21,7 +21,7 @@ class API
     # end
 
     response = HTTParty.get('https://pokeapi.co/api/v2/pokemon?limit=10/')
-    pokemon = response["results"]
+    pokemon = response["results"] #here I want to get my specific info for each pokemon...
     Pokemon.new_from_collection(pokemon)
 
     #the code above works and is a easier/cleaner way to to the API class using HTTParty.
