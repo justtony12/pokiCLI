@@ -1,4 +1,3 @@
-  
 class CLI
     
     def play
@@ -14,7 +13,6 @@ class CLI
 
     def greeting
         puts <<-'EOF'.colorize(:red).bold
-
                      _  _  _         _                               _                          
                     (_)(_)(_)       | |                             | |                        
                      _  _  _  _____ | |   ____   ___   ____   _____ | |                        
@@ -33,7 +31,6 @@ class CLI
             |_____  | / _ \ | | | | / ___)  |  ____/  / _ \ | |_/ )| ___ | / _  || ___ |( \ / )
              _____| || |_| || |_| || |      | |      | |_| ||  _ ( | ____|( (_| || ____| ) X (  
             (_______| \___/ |____/ |_|      |_|       \___/ |_| \_)|_____) \____||_____)(_/ \_)
-
         EOF
 
         puts "Hello, what's your name?".colorize(:blue).bold
@@ -44,7 +41,6 @@ class CLI
         sleep(1)
 
         puts <<-'EOF'.colorize(:green).bold
-
                  _                          _  _                        
                 (_)                        | |(_)                       
                  _         ___   _____   __| | _  ____    ____          
@@ -52,10 +48,7 @@ class CLI
                 | |_____ | |_| |/ ___ |( (_| || || | | |( (_| | _  _  _ 
                 |_______) \___/ \_____| \____||_||_| |_| \___ |(_)(_)(_)
                                                         (_____|           
-
         EOF
-
-        API.new.get_pokemon_urls
     end
 
     def list_pokemon
@@ -91,6 +84,7 @@ class CLI
     def show_pokemon_info(pokemon)
 
         Pokemon.look_at_me(pokemon)
+        puts "Pokedex ID: #{pokemon.id}".colorize(:blue).bold
         puts "Name: #{pokemon.name.capitalize}".colorize(:blue).bold
         puts "Height: #{pokemon.height}".colorize(:blue).bold
         puts "Weight: #{pokemon.weight}".colorize(:blue).bold
@@ -101,7 +95,7 @@ class CLI
     end
 
     def goodbye
-        puts "See you soon!".colorize(:red).bold
+        puts "See you soon!".colorize(:magenta).bold
 
         puts <<-'EOF'.colorize(:yellow).bold
             
@@ -117,7 +111,6 @@ class CLI
                    \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   | 
                     \_.-'       |__|    `-._ |              '-.|     '-.| |   | 
                                             `'                            '-._| 
-
         EOF
         exit
     end

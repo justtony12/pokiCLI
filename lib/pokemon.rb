@@ -1,8 +1,8 @@
 class Pokemon
-    attr_accessor :int_id, :name, :height, :weight, :types, :abilities, :forms, :moves
+    attr_accessor :int_id, :name, :height, :weight, :types, :abilities
     attr_accessor :stats, :sprites, :species, :location_area_encounters
-    attr_accessor :is_default, :held_items, :game_indices, :url, :image
-    attr_accessor :base_experience, :id, :order
+    attr_accessor :is_default, :held_items, :game_indices, :url
+    attr_accessor :id, :order, :base_experience, :forms, :moves
     @@all = []
 
     def initialize(attrs)

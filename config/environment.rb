@@ -4,6 +4,8 @@ require 'json'
 require 'pry'
 require 'colorize'
 require 'colorized_string'
+require 'awesome_print'
+require 'httparty'
 
 require_relative '../lib/cli'
 require_relative '../lib/pokemon'
