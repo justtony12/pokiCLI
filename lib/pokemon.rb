@@ -1,8 +1,27 @@
 class Pokemon
-    #As of right now, only the name, url and int_id are working...
-    #might need to look at the api again and add somthing to line 24.
+
+    # @@all = []
+    # def initialize(pokemon_hash)
+    #     pokemon_hash.each do |key, value|
+    #         self.class.attr_accessor key
+    #     self.send("#{key}=", value)
+    #     end
+    #     @@all << self
+    # end
+
+    # def self.all
+    #     @@all
+    # end
+
     attr_accessor :int_id, :id, :name, :height, :weight, :types
+    #I need to go a layer deeper in my api to get this info...
     attr_accessor :abilities, :url, :moves, :base_experience, :forms
+    
+    #I don't want the attrs below...
+    attr_accessor :game_indices, :held_items, :is_default, :location_area_encounters
+    attr_accessor :order, :species, :sprites, :stats
+    #I only need the attrs below when I try to use my HTTParty code...
+    attr_accessor :count, :next, :previous, :results
     
     @@all = []
 
@@ -38,8 +57,7 @@ class Pokemon
     end
 
     def self.get_pokemon
-        API.get_pokemon_urls
-        all
+        API.new.get_pokemon_urls
     end
 
     def self.find_by_id(input)
