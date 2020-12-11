@@ -1,10 +1,9 @@
-require 'net/http'
-require 'open-uri'
-require 'json'
+# require 'net/http'
+# require 'open-uri'
+# require 'json'
 require 'pry'
 require 'colorize'
 require 'colorized_string'
-require 'awesome_print'
 require 'httparty'
 
 require_relative '../lib/cli'

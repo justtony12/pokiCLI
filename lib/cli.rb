@@ -90,10 +90,6 @@ class CLI
         puts "Height: #{pokemon.height}".colorize(:blue).bold
         puts "Weight: #{pokemon.weight}".colorize(:blue).bold
         puts "Base XP: #{pokemon.base_experience}".colorize(:blue).bold
-        # puts "Type: #{pokemon.types}".colorize(:blue).bold
-        # puts "Abilities: #{pokemon.abilities}".colorize(:blue).bold
-        # puts "Moves: #{pokemon.moves}".colorize(:blue).bold
-        # puts "Forms: #{pokemon.forms}".colorize(:blue).bold
 
         sleep(1)
         puts "To go back to your list of pokemon type 'menu' or to exit type 'exit'.".colorize(:yellow).bold
