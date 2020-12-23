@@ -53,7 +53,7 @@ class CLI
     end
 
     def list_pokemon
-        Pokemon.all.each{|p| puts "#{p.int_id}. #{p.name}"}
+        Pokemon.all.each{|p| puts "#{p.id}. #{p.name}"}
         sleep(1)
         puts "Choose a number from 1-10 to learn more about your Pokemon.".colorize(:blue).bold
         sleep(1)

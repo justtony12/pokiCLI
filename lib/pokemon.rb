@@ -1,17 +1,17 @@
 class Pokemon
-    attr_accessor :int_id, :id, :name, :height, :weight, :url, :base_experience
+    attr_accessor :id, :name, :height, :weight, :url, :base_experience
     
     @@all = []
 
     def initialize(attrs)
-        set_int_id
+        # set_id
         attrs_from_hash(attrs)
         save
     end
 
-    def set_int_id
-        @int_id = @@all.length + 1
-    end
+    # def set_id
+    #     @id = @@all.length + 1
+    # end
 
     def attrs_from_hash(attrs)
         attrs.each do |key, value|
@@ -29,7 +29,7 @@ class Pokemon
     end
 
     def self.find_by_id(input)
-        all.find{|p| p.int_id == input.to_i}
+        all.find{|p| p.id == input.to_i}
     end
 
     def self.look_at_me(pokemon)
