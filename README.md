@@ -2,7 +2,7 @@
 
 This is a pokemon CLI created with pokiapi.co
 
-![This is the title screen](./images/pokeCLI.PNG)
+![This is the title screen](../images/pokeCLI.PNG)
 
 ## Installation
 
