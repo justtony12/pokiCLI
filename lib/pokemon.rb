@@ -20,7 +20,7 @@ class Pokemon
     end
 
     def self.all
-        API.get_pokemon_urls if @@all == []
+        API.new if @@all == []
         @@all
     end
 
@@ -30,6 +30,10 @@ class Pokemon
 
     def self.find_by_id(input)
         all.find{|p| p.id == input.to_i}
+    end
+
+    def self.find_by_name(input)
+        all.find{|n| n.name == input}
     end
 
     def self.look_at_me(pokemon)

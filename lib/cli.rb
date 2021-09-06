@@ -61,7 +61,7 @@ class CLI
     end
 
     def get_input
-        @input = gets.strip
+        @input = gets.strip.downcase
 
         case @input
         when "exit"
@@ -72,7 +72,7 @@ class CLI
     end
 
     def validate(input)
-        pokemon = Pokemon.find_by_id(input)
+        pokemon = Pokemon.find_by_id(input) || Pokemon.find_by_name(input)
         pokemon ? show_pokemon_info(pokemon) : invalid_input
     end
 
