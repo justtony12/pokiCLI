@@ -2,6 +2,8 @@
 
 This is a pokemon CLI created with pokiapi.co
 
+![This is the title screen](./images/pokeCLI.PNG)
+
 ## Installation
 
 - Copy the repo url into your terminal and type in `bundle install` to install the required gems needed for this CLI.
