@@ -2,7 +2,7 @@
 
 This is a pokemon CLI created with pokiapi.co
 
-![This is the title screen](/Images/pokeCLI.PNG)
+![PokeCLI Title Screen](/Images/pokeCLI.PNG)
 
 ## Installation
 
@@ -11,6 +11,7 @@ This is a pokemon CLI created with pokiapi.co
 
 ## Usage
 
+![pokeCLI Start Screen](/Images/startScreen.PNG)
 - This is a simple pokedex CLI that lists the first 10 pokemon in the pokiapi.co along with their information.
 - Once you install this CLI and start up the program it asks for your name so it can greet you personally.
 - Then it list the first 10 pokemon.
