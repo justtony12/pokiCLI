@@ -4,17 +4,17 @@ This is a pokemon CLI created with pokiapi.co
 
 ## Installation
 
-Copy the repo url into your terminal and type in `bundle install` to install the required gems needed for this CLI. <br>
-To start the application type `bin/pokedex` in your terminal, this will open up the files and start the application in your terminal.
+- Copy the repo url into your terminal and type in `bundle install` to install the required gems needed for this CLI.
+- To start the application type `bin/pokedex` in your terminal, this will open up the files and start the application in your terminal.
 
 ## Usage
 
-This is a simple pokedex CLI that lists the first 10 pokemon in the pokiapi.co along with their information.<br>
-Once you install this CLI and start up the program it asks for your name so it can greet you personally.<br>
-Then it list the first 10 pokemon.<br>
-Choose a number from 1-10 in order to select a specific pokemon and it will display the info for the pokemon you choose.<br>
-Type `menu` and it will take you back to your list of 10 pokemon.<br>
-Type `exit` to exit the program.<br>
+- This is a simple pokedex CLI that lists the first 10 pokemon in the pokiapi.co along with their information.
+- Once you install this CLI and start up the program it asks for your name so it can greet you personally.
+- Then it list the first 10 pokemon.
+- Choose a number from 1-10 in order to select a specific pokemon and it will display the info for the pokemon you choose.
+- Type `menu` and it will take you back to your list of 10 pokemon.
+- Type `exit` to exit the program.
 
 ## Contribution
 
