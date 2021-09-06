@@ -1,7 +1,5 @@
 # pokiCLI
 
-<<<<<<< HEAD
-=======
 This is a pokemon CLI created with pokiapi.co
 
 ## Installation
@@ -25,4 +23,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT]
 (https://choosealicense.com/licenses/mit/)
->>>>>>> fde1bcb9096f185c1699bbb07078e6b828ce1af4
